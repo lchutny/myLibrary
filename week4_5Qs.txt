@@ -1,0 +1,20 @@
+1) THIS IS THE comprehension for extracting names from the json data
+with open("data.json") as f:
+     temp = json.load(f)
+     data = temp['data']
+     cols = temp['cols']
+
+#this works
+# names = []
+# for n in range(0,len(data)):
+#     if data[n][0] not in names:
+#         names.append(data[n][0])
+# print(names)
+
+
+#this works because we are doing a comprehension using a set, which won't allow duplicates.
+#Q: How to do this with a list?
+names = {data[n][0] for n in range(0,len(data))}
+print(names)
+
+2)
